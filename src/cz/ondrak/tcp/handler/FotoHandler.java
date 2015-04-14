@@ -29,6 +29,8 @@ public class FotoHandler extends AbstractHandler {
             fileWriter.removeFile();
             return SYNTAX_ERROR;
         }
+        System.out.println("Calculated checksum: " + checksum);
+        System.out.println("Received checksum: " + receivedChecksum);
         if (receivedChecksum == checksum) {
             System.out.println("Photo was received successfully and saved into file " + fileWriter.getFileName());
             return OK;
